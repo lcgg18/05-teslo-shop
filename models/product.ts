@@ -38,6 +38,8 @@ const productSchema: Schema = new Schema({
 
 //TODO: crea indice de mongo
 
+productSchema.index({ title: 'text', tags:'text'});
+
 const Product: Model<IProduct>= mongoose.models.Product || mongoose.model('Product', productSchema);
 
 export default Product;
